@@ -1,0 +1,178 @@
+<!-- Gallery Page HTML -->
+<!-- Add travel images with zig-zag layout manually -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - ExploreTheWorld</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #000000);
+      color: #ffffff;
+    }
+    nav {
+      background: #1a1a2e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav .logo {
+      font-size: 24px;
+      color: #f39c12;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+    .search-box {
+      display: flex;
+      margin-top: 10px;
+    }
+    .search-box input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 16px;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      background-color: #f39c12;
+      border: none;
+      color: white;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+    .gallery-section {
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .gallery-item {
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      background: #111;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-item .desc {
+      padding: 15px;
+      color: #f1f1f1;
+      text-align: center;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #ccc;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #f39c12;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .gallery-item { width: 90%; }
+      nav ul { flex-direction: column; gap: 10px; }
+      .search-box { justify-content: center; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">ExploreTheWorld</div>
+    <ul>
+      <li><a onclick="Home" href="index.htm#home">Home</a></li>
+      <li><a onclick="Gallery" href="gallery.htm#gallery">Gallery</a></li>
+      <li><a onclick="About" href="about.htm#about">About</a></li>
+      <li><a onclick="Contact" href="contact.htm#contact">Contact</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search section...">
+      <button onclick="searchSection()">Search</button>
+    </div>
+  </nav>
+
+  <section class="gallery-section" id="gallery">
+    <!-- Add travel images here -->
+    <div class="gallery-item">
+      <img src="p5.jpg" alt="Sample Image">This small, cherished local temple—commonly called Jogni or Jogani Mata Mandir—is situated in Shilaj (postal code 380059), Ahmedabad 
+
+
+It's recognized with a Mappls PIN "pqirm9", confirming its presence in the Shilaj region 
+
+
+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="p2.jpg" alt="Sample Image">
+      <div class="desc">      <div class="desc">Listed as Shree Hanumanji Temple about 0.4 km from the village center .
+
+Locally cherished, it’s described as a historic and peaceful Hanuman Mandir, near a green pond or gardens 
+
+
+Typical of village Hanuman temples, it likely follows regional architectural styles — modest in structure but vibrant with community devotion.
+
+</div>
+    </div>
+    <!-- Add more items as needed -->
+  </section>
+
+  <div class="footer">
+    <p>Connect with us:</p>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <p>&copy; 2025 ExploreTheWorld. All rights reserved.</p>
+  </div>
+
+  <script>
+    function searchSection() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (query.includes("gallery")) {
+        window.location.href = "gallery.html#gallery";
+      } else if (query.includes("about")) {
+        window.location.href = "about.html#about";
+      } else if (query.includes("contact")) {
+        window.location.href = "contact.html#contact";
+      } else if (query.includes("home")) {
+        window.location.href = "index.html#home";
+      } else {
+        alert("Section not found.");
+      }
+    }
+  </script>
+</body>
+</html>

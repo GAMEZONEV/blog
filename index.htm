@@ -1,0 +1,240 @@
+<!-- Home Page HTML -->
+<!-- Add image and description manually below -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExploreTheWorld - Home</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1c1c1c, #000);
+      color: #ffffff;
+    }
+    nav {
+      background: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
+    nav .logo {
+      font-size: 24px;
+      color: #f39c12;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+    .search-box {
+      display: flex;
+      margin-top: 10px;
+    }
+    .search-box input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 16px;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      background-color: #f39c12;
+      border: none;
+      color: white;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: #222;
+      color: #f1c40f;
+    }
+    header h1 {
+      color: #ffe600;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color:  #f8f9fa;
+    }
+    .zigzag-gallery {
+      padding: 50px 20px;
+    }
+    .zigzag-item {
+      display: flex;
+      size: 80px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+    .zigzag-item.reverse {
+      flex-direction: row-reverse;
+    }
+    .zigzag-item img {
+      width: 30%;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgb(0, 0, 0);
+      transition: transform 0.3s;
+    }
+    .zigzag-item img:hover {
+      background-color: #f1c40f;
+      transform: scale(1.05);
+    }
+    .description {
+      width: 50%;
+      font-size: 30px;
+      color: #ccc;
+    }
+    footer {
+      background: #111;
+      padding: 30px 20px;
+      text-align: center;
+       font-size: 14px;
+      color: #ffd700;
+    }
+    footer a {
+      color: #f39c12;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #ff8c00;
+    }
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; gap: 10px; }
+      .zigzag-item, .zigzag-item.reverse { flex-direction: column; }
+      .zigzag-item img, .description { width: 100%; }
+    }
+  </style>
+  <script>
+    function searchSection() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (query.includes("gallery")) {
+        window.location.href = "gallery.html";
+      } else if (query.includes("about")) {
+        window.location.href = "about.html";
+      } else if (query.includes("contact")) {
+        window.location.href = "contact.html#contact";
+      } else if (query.includes("home")) {
+        window.location.href = "index.html#home";
+      } else {
+        alert("Section not found.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="logo">ExploreTheWorld</div>
+    <ul>
+      <li><a onclick="Home" href="index.htm#home">Home</a></li>
+      <li><a onclick="Gallery" href="gallery.htm#gallery">Gallery</a></li>
+      <li><a onclick="About" href="about.htm#about">About</a></li>
+      <li><a onclick="Contact" href="contact.htm#contact">Contact</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search section..." />
+      <button onclick="searchSection()">Search</button>
+    </div>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to ExploreTheWorld</h1>
+    <p>Discover new places, explore cultures, and find your next adventure.</p>
+  </header>
+
+  <main>
+    <section class="zigzag-gallery">
+      <!-- Add your images and descriptions below manually -->
+      <div class="zigzag-item">
+        <img src="p9.jpg" alt="Travel Spot 1" />
+        <div class="description">🛕 Shamlaji Temple – Overview
+Location: Shamlaji village, near the Meshwo River, Aravalli District, Gujarat (on NH-8, approx. 20 km from Modasa, and 120 km from Ahmedabad)
+
+Deity: Lord Shamlaji (Vishnu / Krishna)
+
+Popular Name: "Dwarka of the East"
+
+Temple Style: Classical Hindu temple architecture (Nagara style)
+
+Built: Estimated around the 11th to 13th century, though some sources suggest even earlier origins
+
+Material: Mainly constructed using sandstone and white marble
+
+Nearby Attractions: Devni Mori Buddhist site, ancient stepwells, and tribal villages
+
+</div>
+      </div>
+      <div class="zigzag-item reverse">
+        <img src="p5.jpg" alt="Travel Spot 2" />
+        <div class="description">This small, cherished local temple—commonly called Jogni or Jogani Mata Mandir—is situated in Shilaj (postal code 380059), Ahmedabad 
+
+
+It's recognized with a Mappls PIN "pqirm9", confirming its presence in the Shilaj region 
+
+
+.</div>
+      </div>
+      <div class="zigzag-item">
+        <img src="p3.jpg" alt="Travel Spot 3" />
+        <div class="description">High water force: The turbulent flow in the picture reflects strong discharge—common during irrigation release or monsoon operations.
+
+Risk zone: Several fatal incidents have been reported in this stretch. A local news article mentions 23 bodies recovered in 3 months near Kalol canal areas like Jaspur, Sheerisa, and Piyaj—often due to suicide attempts 
+
+Leakages & maintenance: There are occasional pipeline leaks delivering water to Kalol town, which the municipality must repair to prevent disease risks 
+
+.</div>
+      </div>
+      <div class="zigzag-item reverse">
+        <img src="p7.jpg" alt="Travel Spot 4" />
+        <div class="description">Unique Architecture: The bridge has a curved truss structure and is decorated with colorful kite-shaped panels, representing the International Kite Festival of Gujarat.
+
+Night View: Lit with vibrant LED lights at night, making it a major tourist attraction.
+
+Use: Designed for walking and cycling, with viewing decks offering panoramic views of the city and river.
+
+📍 Nearby Attractions
+Sabarmati Riverfront Garden
+
+Flower Park
+
+River Cruise rides
+
+Ahmedabad Eye Ferris Wheel (proposed/nearby)
+
+
+</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ExploreTheWorld. All rights reserved.</p>
+    <div>
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+    </div>
+  </footer>
+</body>
+</html>

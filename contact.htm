@@ -1,0 +1,215 @@
+<!-- Contact Page HTML -->
+<!-- This page has the contact form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - ExploreTheWorld</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #232526, #000000);
+      color: #ffffff;
+    }
+    nav {
+      background: #1a1a2e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav .logo {
+      font-size: 24px;
+      color: #f39c12;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+    .search-box {
+      display: flex;
+      margin-top: 10px;
+    }
+    .search-box input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 16px;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      background-color: #f39c12;
+      border: none;
+      color: white;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      animation: slideFade 1s ease;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffe600;
+    }
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #f5f6fa;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 8px;
+      background: #1a1a2e;
+      color: #ecf0f1;
+      font-size: 16px;
+    }
+    form input:focus,
+    form textarea:focus {
+      outline: 2px solid #f39c12;
+    }
+    form button {
+      margin-top: 25px;
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    form button:hover {
+      background: #d35400;
+      transform: scale(1.05);
+    }
+    .sent-message {
+      display: none;
+      margin-top: 20px;
+      color: #2ecc71;
+      font-weight: bold;
+      text-align: center;
+    }
+    @keyframes slideFade {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      background-color: #111;
+      color: #ccc;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #ffd700;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer a:hover {
+      color: #ff8c00;
+    }
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; gap: 10px; }
+      .container { margin: 20px; padding: 20px; }
+      .search-box { justify-content: center; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">ExploreTheWorld</div>
+    <ul>
+      <li><a onclick="Home" href="index.htm#home">Home</a></li>
+      <li><a onclick="Gallery" href="gallery.htm#gallery">Gallery</a></li>
+      <li><a onclick="About" href="about.htm#about">About</a></li>
+      <li><a onclick="Contact" href="contact.htm#contact">Contact</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search section...">
+      <button onclick="searchSection()">Search</button>
+    </div>
+  </nav>
+
+  <div class="container" id="contact">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <div class="sent-message" id="sentMessage">Message sent! We'll be in touch.</div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>Connect with us:</p>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <p>&copy; 2025 ExploreTheWorld. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const sent = document.getElementById('sentMessage');
+      sent.style.display = 'block';
+      this.reset();
+    });
+
+    function searchSection() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (query.includes("gallery")) {
+        window.location.href = "gallery.html#gallery";
+      } else if (query.includes("about")) {
+        window.location.href = "about.html#about";
+      } else if (query.includes("contact")) {
+        window.location.href = "contact.html#contact";
+      } else if (query.includes("home")) {
+        window.location.href = "index.html#home";
+      } else {
+        alert("Section not found.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!-- About Page HTML -->
+<!-- Add travel blog or site purpose content here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - ExploreTheWorld</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #000000);
+      color: #ffffff;
+    }
+    nav {
+      background: #1a1a2e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav .logo {
+      font-size: 24px;
+      color: #f39c12;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+    .search-box {
+      display: flex;
+      margin-top: 10px;
+    }
+    .search-box input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 16px;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      background-color: #f39c12;
+      border: none;
+      color: white;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+    .about-section {
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .about-section h1 {
+      margin-bottom: 20px;
+      color: #f1c40f;
+    }
+    .about-section p {
+      line-height: 1.7;
+      font-size: 18px;
+      color: #ddd;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #ffd700;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #ffd700;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; gap: 10px; }
+      .search-box { justify-content: center; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">ExploreTheWorld</div>
+    <ul>
+      <li><a onclick="Home" href="index.htm#home">Home</a></li>
+      <li><a onclick="Gallery" href="gallery.htm#gallery">Gallery</a></li>
+      <li><a onclick="About" href="about.htm#about">About</a></li>
+      <li><a onclick="Contact" href="contact.htm#contact">Contact</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search section...">
+      <button onclick="searchSection()">Search</button>
+    </div>
+  </nav>
+
+  <section class="about-section" id="about">
+    <h1>About ExploreTheWorld</h1>
+    <p>
+      Welcome to ExploreTheWorld – your trusted companion for discovering amazing travel destinations across the globe. Whether you're a seasoned explorer or a casual tourist, our goal is to inspire and inform. From hidden gems to iconic landmarks, we bring you the stories, tips, and visual splendor of the world's most breathtaking places.
+    </p>
+    <p>
+      Our passionate team curates content that helps travelers make the most of their journeys, with practical advice, photo inspiration, and cultural insights. Start your adventure with us and see the world like never before.
+    </p>
+  </section>
+
+  <div class="footer">
+    <p>Connect with us:</p>
+    <a href="fb.jpg.png">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <p>&copy; 2025 ExploreTheWorld. All rights reserved.</p>
+  </div>
+
+  <script>
+    function searchSection() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (query.includes("gallery")) {
+        window.location.href = "gallery.html#gallery";
+      } else if (query.includes("about")) {
+        window.location.href = "about.html#about";
+      } else if (query.includes("contact")) {
+        window.location.href = "contact.html#contact";
+      } else if (query.includes("home")) {
+        window.location.href = "index.html#home";
+      } else {
+        alert("Section not found.");
+      }
+    }
+  </script>
+</body>
+</html>
